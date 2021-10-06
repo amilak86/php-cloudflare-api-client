@@ -4,7 +4,7 @@ A PHP based API client library for Cloudflare which lets you execute common clou
 
 ## Requirements
 
-- PHP 7.2.5 or higher
+- PHP 5.6 or higher
 - Composer package manager
 - An HTTPS enabled web server. All the requests to Cloudflare API must be sent over HTTPS. 
 - A Cloudflare API token. You can obtain the API token from your user profile's API Tokens page located at https://dash.cloudflare.com/profile/api-tokens
