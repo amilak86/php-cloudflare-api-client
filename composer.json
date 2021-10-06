@@ -1,5 +1,5 @@
 {
-    "name": "ak86/cloudflare-api-helper",
+    "name": "ak86/php-cloudflare-api-client",
     "description": "A PHP based client library for simplifying Cloudflare API operations.",
     "type": "library",
     "license": "MIT",
