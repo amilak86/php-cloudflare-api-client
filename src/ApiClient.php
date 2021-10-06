@@ -20,7 +20,7 @@ class ApiClient
 			'base_uri' => 'https://api.cloudflare.com/client/v4/',
 			'headers' => [
 					'Content-Type' => 'application/json',
-					'Authorization: Bearer '. $token
+					'Authorization' => 'Bearer '. $token
 			]
 
 		]);
