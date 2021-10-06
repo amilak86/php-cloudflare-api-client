@@ -1,0 +1,21 @@
+{
+    "name": "ak86/cloudflare-api-helper",
+    "description": "A PHP based client library for simplifying Cloudflare API operations.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Amila K.",
+            "email": "28174846+amilak86@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "^7.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ak86\\CF\\": "src/"
+        }
+    }
+}
