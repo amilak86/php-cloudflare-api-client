@@ -17,7 +17,7 @@ class ApiClient
 	{
 		// instantiate and store a new guzzle http client
 		self::$guzzle = new GuzzleHttpClient([
-			'base_uri' => 'https://api.cloudflare.com/client/v4',
+			'base_uri' => 'https://api.cloudflare.com/client/v4/',
 			'headers' => [
 					'Content-Type' => 'application/json',
 					'Authorization: Bearer '. $token
@@ -38,7 +38,7 @@ class ApiClient
 		$zoneid = self::getZoneId($domain);
 
 		// send the api request to clear the domain cache
-		$req = self::$guzzle->request('POST', '/zones/'.$zoneid.'/purge_cache', ['json' => ['purge_everything' => true]]);
+		$req = self::$guzzle->request('POST', 'zones/'.$zoneid.'/purge_cache', ['json' => ['purge_everything' => true]]);
 
 		// convert the json response to an object
 		$res = json_decode($req->getBody());
@@ -65,7 +65,7 @@ class ApiClient
 		$zone = self::getZoneId($domain);
 
 		// send an api request to get the current dev. mode status of the domain
-		$req = self::$guzzle->request('GET', '/zones/'.$zone.'/settings/development_mode');
+		$req = self::$guzzle->request('GET', 'zones/'.$zone.'/settings/development_mode');
 
 		// convert the json response to an object
 		$res = json_decode($req->getBody());
@@ -78,7 +78,7 @@ class ApiClient
 			if($r->value == 'off')
 			{
 				// status is off. lets set this site to dev. mode
-				$devreq = self::$guzzle->request('PATCH', '/zones/'.$zone.'/settings/development_mode', ['json' => ['value' => 'on']]);
+				$devreq = self::$guzzle->request('PATCH', 'zones/'.$zone.'/settings/development_mode', ['json' => ['value' => 'on']]);
 				
 				// convert the json resp. to an object
 				$devreqres = json_decode($devreq->getBody());
@@ -117,7 +117,7 @@ class ApiClient
 	private static function getZoneId($domain)
 	{
 		// send an api request to get the domain zone details
-		$response = self::$guzzle->request('GET', '/zones?name='.$domain);
+		$response = self::$guzzle->request('GET', 'zones?name='.$domain);
 
 		// get the json response
 		$responseBody = $response->getBody();
