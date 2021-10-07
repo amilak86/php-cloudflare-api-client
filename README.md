@@ -9,6 +9,11 @@ A PHP based API client library for Cloudflare which lets you execute common clou
 - An HTTPS enabled web server. All the requests to Cloudflare API must be sent over HTTPS. 
 - A Cloudflare API token. You can obtain the API token from your user profile's API Tokens page located at https://dash.cloudflare.com/profile/api-tokens
 
+NOTE: There are two ways to authenticate with the Cloudflare API. The newer API Tokens based authentication or the old API Keys based authentication. If you opt to use the API token based authentication, make sure to have following permissions enabled:
+
+- cache_purge:edit
+- zone_settings:edit
+
 ## Installation
 
 Open your terminal. Switch to your project's root directory and run below command to install the package:
@@ -59,6 +64,13 @@ catch (Exception $e){
 }
 
 ```
+
+## Example App
+
+Please check out below repository for a demo project utilizing CloudflareApiClient:
+
+[https://github.com/amilak86/slack-cloudflare-api-interface](https://github.com/amilak86/slack-cloudflare-api-interface)
+
 ## License
 
 [MIT](./LICENSE)
